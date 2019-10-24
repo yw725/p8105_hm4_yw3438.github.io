@@ -4,7 +4,7 @@ navbar:
   title: "Home"
   right:
     - text: "About"
-      href: resume.html
+      href: about.html
     - icon: fa-envelope fa-lg
       href: mailto:<wangyn827@gmail.com>
     - icon: fa-github fa-lg
