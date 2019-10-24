@@ -8,3 +8,4 @@ output:
     theme: cerulean
 ---
 
+You can learn more about me [here](about.html)
