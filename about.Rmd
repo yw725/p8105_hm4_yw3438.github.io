@@ -1,9 +1,147 @@
 ---
-title: "About me"
+title: "YUNING WANG"
+subtitle: "RESUME"
 output: 
   html_document:
     toc: true
     toc_float: true
-    theme: cerulean
+    theme: flatly
 ---
+
+
+# Basic Information
+
+Yuning Wang, born on 27th Aug. 1997 in Weihai, China.
+
+Preferred to be called as Phoebe if "Yuning" is difficult for you to pronounce.
+
+![](intro.jpg)
+
+***
+
+# Education
+
+> [Zhejiang University](http://www.zju.edu.cn/english/)
+
+  * Bachelor of Science in Marine Science
+  
+  * Awarded Third Class Study Scholarship (10/2016), Outstanding Student (10/2016)
+  
+> [Columbia University](https://www.mailman.columbia.edu/)
+  
+  * Master of Science in Biostatistics (studying)
+  
+***
+
+# Internships & Professional Experience
+
+> Bain & Company
+
+  * *Part-Time Assistant*	  
+  * 09/2018-10/2018
+  
+  * Responsibilities:
+    + Collected sales data and summarized top 5 mid-range smartphones and market shares in 86 countries on 2017
+    +	Examined and visualized annual sales volume, global market shares, average price of 6 smartphone brands of various levels and price ranges
+    +	Indicated sales trends of the 6 brands for strategic planning of a phone manufacturer
+
+
+> Carnegie Mellon Univ, Business Analytics Internship Program (Remote)
+
+  * *Researcher*  	
+  * 07/2018 – 08/2018  
+
+  * Task 1: Meeting requirements of a family buying a house
+    +	Filtered and evaluated neighborhoods, retrieved data, clustered them and choose a group based on K & DBI
+    +	Selected a house after analyzing data of property trading and price prediction in Pittsburgh
+  * Task 2: Recommending a camera and router for a field agent
+    +	Studied data mining methods including decision tree, rule mining and clustering, did text mining in Python 
+    +	Applied sentiment analysis in RapidMiner on data of Amazon products review, offered advice to agent
+    
+    
+> The People’s Bank of China, Weihai City Center Sub-Branch
+
+  * *Researcher*  	
+  * 07/2018 – 08/2018  
+
+  * Responsibilities
+    +	Summarized, processed and analyzed data of local industry output and housing loans in Excel
+    +	Studied topics of corporate lending, conducted individual studies on top of existing data
+    +	Reflected current and future economic trends of Weihai in research results, offered possible suggestions
+
+
+> China Merchants Bank Private Banking, Banker 101 Internship Program
+
+  * *Intern*  	
+  * 07/2018  
+
+  * Responsibilities
+    +	Studied investment analysis, financial statements analysis, investment banking business, Fin-tech and AI
+    +	Visited offshore affiliations and business partners including Bloomberg, learned operations of Bloomberg
+    +	Simulated customizing wealth solutions for High-Net-Worth clients through a case study of Tesla
+    
+***
+
+# Academic Projects
+
+> Quantitative Evolution Description of Bed Elevation and Components of Grain Sizes
+
+  * *Author of Experiment Report of Marine Sedimentology*
+  * 04/2018 – 05/2018
+  
+  * Responsibilities
+    + Calculated and processed governing equation of bed load motion under certain conditions in MATLAB
+    + Generated quantitative evolution chart of bed elevation and components of different grain sizes in surface
+    
+> Changes of Organic Carbon Content & Chlorophyll A Concentration in Different Phrases of Life Cycles of Planktonic Algae
+
+  * *Project Applicant & Leader*
+  * 05/2017 – 05/2018
+  
+  * Responsibilities
+    + Measured concentration of algae cells and Chlorophyll A, conducted POC test, processed data and graphs 
+    + Obtained oceanographical remote sensing data, improved measurement of organic carbon content in sea water
+
+***
+
+# Extracurricular Activity
+
+> Student Union Office, Ocean College, Zhejiang University
+
+  * *Vice Chair*
+  * 05/2016 – 12/2017
+  
+  * Responsibilities
+    + Organized recruitment and trainings of new members as well as financial jobs
+    + Led new members to plan and successfully hold 2016-2017 new year party of Ocean College
+
+***
+
+# Competencies
+
+> Language
+
+  * Native in Chinese/Mandarin
+  * Proficient in English
+  
+> Computer Skills
+
+  * Intermediate in *R*, *C++*, *Python*
+  * Intermediate in *Matlab*, *Origin*, *Bloomberg*
+  * Skilled in *Excel*
+
+> Hobbies
+
+  * [Erhu](https://en.wikipedia.org/wiki/Erhu)
+    + Level 10 Certificate
+  * [Tea Art](https://en.wikipedia.org/wiki/Chinese_tea_culture)
+    + Junior Qualification Certificate for Tea Specialist
+
+
+
+
+
+
+
+
 

@@ -5,7 +5,13 @@ output:
   html_document:
     toc: true
     toc_float: true
-    theme: cerulean
+    theme: flatly
 ---
 
-You can learn more about me [here](about.html)
+# Learn More About Me At Here~
+
+[Here](about.html) is a brief introduction about me.
+
+Learn about me and my academic and professional experience right now!
+
+![](beiying.jpg)

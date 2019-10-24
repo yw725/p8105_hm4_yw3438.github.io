@@ -11,4 +11,4 @@ navbar:
       href: https://github.com/yw725
 output:
   html_document:
-    theme: cerulean
+    theme: flatly
