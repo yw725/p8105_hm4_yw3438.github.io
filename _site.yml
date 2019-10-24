@@ -1,0 +1,14 @@
+name: "My contact information"
+output_dir: "."
+navbar:
+  title: "Home"
+  right:
+    - text: "About"
+      href: resume.html
+    - icon: fa-envelope fa-lg
+      href: mailto:<wangyn827@gmail.com>
+    - icon: fa-github fa-lg
+      href: https://github.com/yw725
+output:
+  html_document:
+    theme: cerulean
