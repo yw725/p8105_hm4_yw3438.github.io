@@ -5,6 +5,8 @@ navbar:
   right:
     - text: "About"
       href: about.html
+    - text: "Plotly"
+      href: problem 2.html
     - icon: fa-envelope fa-lg
       href: mailto:<wangyn827@gmail.com>
     - icon: fa-github fa-lg
