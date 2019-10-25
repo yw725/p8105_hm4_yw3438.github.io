@@ -48,12 +48,12 @@ rest_inspec %>%
 
 ***
 
-## Plotly Colchart
+## Plotly Barplot
 
 Using a barplot to indicate the **number** of top 15 restaurants in *Manhattan*.
 
 ```{r message=FALSE, echo=FALSE, warning=FALSE}
-col_cuisine = rest_inspec %>% 
+rest_inspec %>% 
   select(boro, cuisine_description) %>% 
   filter(boro == "MANHATTAN") %>%
   count(cuisine_description, sort = TRUE) %>% 
@@ -61,22 +61,16 @@ col_cuisine = rest_inspec %>%
   mutate(cuisine_description = 
            recode(cuisine_description, "Latin (Cuban, Dominican, Puerto Rican, South & Central American)" = "Latin (CDPRSCA)")) %>% 
   mutate(cuisine_description = fct_reorder(cuisine_description, n)) %>% 
-  ggplot(aes(x = cuisine_description, y = n, fill = cuisine_description)) +
-  geom_col() +
-  coord_flip() +
-  labs(
-    title = "Number of Restaurants in Manhattan",
-    x = "Cuisine Description",
-    y = "Number"
-  ) +
-  theme_bw() +
-  theme(legend.position = "bottom") +
-  scale_fill_viridis_d("Cuisine")
-
-ggplotly(col_cuisine)
+  plot_ly(x = ~cuisine_description, y = ~n, 
+          color = ~cuisine_description, type = "bar") %>% 
+  layout(
+    title = "Number of Top 15 Cuisine Restaurants in Manhattan",
+    xaxis = list(title = "Cuisine Description"),
+    yaxis = list(title = "Number")
+  )
 ```
 
 ***
 
-
+## Line Plot
 
