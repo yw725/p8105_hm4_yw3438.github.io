@@ -8,9 +8,75 @@ output:
     theme: flatly
 ---
 
+***
+
 Here I will create a flexdashboard using *plotly* for three distinct plot types.
 
+***
 
+```{r setup, include = FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(viridis)
+library(dplyr)
+library(p8105.datasets)
+
+library(plotly)
+```
+
+## Data
+
+The dataset that I choose to do is ["*NY Restaurant Inspectations*"](https://dev.socrata.com/foundry/data.cityofnewyork.us/43nn-pn8j), which is information on restaurant name and location, type of food, inspection date, and details on violation codes, total scores, and associated grades. 
+
+***
+
+## Plotly Boxplot
+
+Using a boxplot to indicate the **score** distribution in all restaurants in different *boroughs*.
+
+```{r message=FALSE, echo=FALSE, warning=FALSE}
+# read in data
+data("rest_inspec")
+
+rest_inspec %>% 
+  select(boro, score, cuisine_description) %>% 
+  mutate(boro = fct_reorder(boro, score)) %>% 
+  filter(boro != "Missing") %>% 
+  plot_ly(y = ~score, color = ~boro, type = "box",
+          colors = "Set2")
+```
+
+***
+
+## Plotly Colchart
+
+Using a barplot to indicate the **number** of top 15 restaurants in *Manhattan*.
+
+```{r message=FALSE, echo=FALSE, warning=FALSE}
+col_cuisine = rest_inspec %>% 
+  select(boro, cuisine_description) %>% 
+  filter(boro == "MANHATTAN") %>%
+  count(cuisine_description, sort = TRUE) %>% 
+  top_n(15) %>% 
+  mutate(cuisine_description = 
+           recode(cuisine_description, "Latin (Cuban, Dominican, Puerto Rican, South & Central American)" = "Latin (CDPRSCA)")) %>% 
+  mutate(cuisine_description = fct_reorder(cuisine_description, n)) %>% 
+  ggplot(aes(x = cuisine_description, y = n, fill = cuisine_description)) +
+  geom_col() +
+  coord_flip() +
+  labs(
+    title = "Number of Restaurants in Manhattan",
+    x = "Cuisine Description",
+    y = "Number"
+  ) +
+  theme_bw() +
+  theme(legend.position = "bottom") +
+  scale_fill_viridis_d("Cuisine")
+
+ggplotly(col_cuisine)
+```
+
+***
 
 
 
