@@ -43,7 +43,12 @@ rest_inspec %>%
   mutate(boro = fct_reorder(boro, score)) %>% 
   filter(boro != "Missing") %>% 
   plot_ly(y = ~score, color = ~boro, type = "box",
-          colors = "Set2")
+          colors = "Set2") %>% 
+  layout(
+    title = "Distribution of Scores in Different Boro",
+    xaxis = list(title = "Borough"),
+    yaxis = list(title = "Score")
+  )
 ```
 
 ***
