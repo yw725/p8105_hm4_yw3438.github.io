@@ -25,7 +25,7 @@ Column {data-width=500}
 
 ###  Grade Date
 
-Using *LINEPLOT* to indicate the *number* of restaurants received the grade in the month.
+Using *LINEPLOT* to indicate the **number** of restaurants received the grade in the month.
 
 ```{r}
 rest_inspec %>% 
