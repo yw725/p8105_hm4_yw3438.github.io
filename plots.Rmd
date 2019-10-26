@@ -1,0 +1,76 @@
+---
+title: "Plots About NY Restaurant Inspectations"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(viridis)
+library(dplyr)
+library(p8105.datasets)
+
+library(plotly)
+```
+
+```{r}
+data("rest_inspec")
+```
+
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Chart A
+
+
+```{r}
+
+```
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Numbers of Top 15 Cuisine Restaurants in Manhattan
+
+Using a barplot to indicate the **number** of top 15 restaurants in *Manhattan*.
+
+```{r}
+rest_inspec %>% 
+  select(boro, cuisine_description) %>% 
+  filter(boro == "MANHATTAN") %>%
+  count(cuisine_description, sort = TRUE) %>% 
+  top_n(15) %>% 
+  mutate(cuisine_description = 
+           recode(cuisine_description, "Latin (Cuban, Dominican, Puerto Rican, South & Central American)" = "Latin (CDPRSCA)")) %>% 
+  mutate(cuisine_description = fct_reorder(cuisine_description, n)) %>% 
+  plot_ly(x = ~cuisine_description, y = ~n, 
+          color = ~cuisine_description, type = "bar") %>% 
+  layout(
+    title = "Numbers of Top 15 Cuisine Restaurants in Manhattan",
+    xaxis = list(title = "Cuisine Description"),
+    yaxis = list(title = "Number")
+  )
+```
+
+### Distribution of Scores in Different Boroughs
+
+Using a boxplot to indicate the **score** distribution in all restaurants in different *boroughs*.
+
+```{r}
+rest_inspec %>% 
+  select(boro, score, cuisine_description) %>% 
+  mutate(boro = fct_reorder(boro, score)) %>% 
+  filter(boro != "Missing") %>% 
+  plot_ly(y = ~score, color = ~boro, type = "box",
+          colors = "Set2") %>% 
+  layout(
+    title = "Distribution of Scores in Different Boro",
+    xaxis = list(title = "Borough"),
+    yaxis = list(title = "Score")
+  )
+```
+

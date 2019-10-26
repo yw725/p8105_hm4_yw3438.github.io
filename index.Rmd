@@ -8,6 +8,8 @@ output:
     theme: flatly
 ---
 
+***
+
 # Learn More About Me At Here~
 
 [Here](about.html) is a brief introduction about me.
@@ -16,7 +18,10 @@ Learn about me and my academic and professional experience right now!
 
 ![](beiying.jpg)
 
+***
 
+# Answers of Problem 2
 
+The plots about NY Restaurant Inspections are right [here](plots.html).
 
 

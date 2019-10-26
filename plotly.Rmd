@@ -1,8 +1,9 @@
 ---
-title: "Problem 2"
+title: "Welcome to Yuning's Website"
 
 output: 
   html_document:
+    code_folding: hide
     toc: true
     toc_float: true
     theme: flatly
@@ -14,7 +15,7 @@ Here I will create a flexdashboard using *plotly* for three distinct plot types.
 
 ***
 
-```{r setup, include = FALSE, message=FALSE}
+```{r setup, message=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(viridis)
@@ -34,7 +35,7 @@ The dataset that I choose to do is ["*NY Restaurant Inspectations*"](https://dev
 
 Using a boxplot to indicate the **score** distribution in all restaurants in different *boroughs*.
 
-```{r message=FALSE, echo=FALSE, warning=FALSE}
+```{r message=FALSE, warning=FALSE}
 # read in data
 data("rest_inspec")
 
@@ -57,7 +58,7 @@ rest_inspec %>%
 
 Using a barplot to indicate the **number** of top 15 restaurants in *Manhattan*.
 
-```{r message=FALSE, echo=FALSE, warning=FALSE}
+```{r message=FALSE, warning=FALSE}
 rest_inspec %>% 
   select(boro, cuisine_description) %>% 
   filter(boro == "MANHATTAN") %>%
@@ -78,4 +79,9 @@ rest_inspec %>%
 ***
 
 ## Line Plot
+
+```{r}
+#rest_inspec %>% 
+  
+```
 
