@@ -10,7 +10,6 @@ output:
 library(flexdashboard)
 library(tidyverse)
 library(viridis)
-library(dplyr)
 library(p8105.datasets)
 
 library(plotly)
@@ -24,11 +23,24 @@ data("rest_inspec")
 Column {data-width=500}
 -----------------------------------------------------------------------
 
-### Chart A
+###  Grade Date
 
+Using *LINEPLOT* to indicate the *number* of restaurants received the grade in the month.
 
 ```{r}
-
+rest_inspec %>% 
+  select(grade_date) %>% 
+  separate(grade_date, into = c("year", "month", "day"), sep = "-") %>%
+  mutate(month = month.name[as.numeric(month)]) %>% 
+  group_by(year, month) %>% 
+  summarize(number = n()) %>% 
+  plot_ly(x = ~month, y = ~number, type = "scatter",
+          mode = "lines", color = ~year) %>% 
+  layout(
+    title = "Grade Date",
+    xaxis = list(title = "Date"),
+    yaxis = list(title = "Number of Restaurants")
+  )
 ```
 
 Column {data-width=500}
@@ -36,7 +48,7 @@ Column {data-width=500}
 
 ### Numbers of Top 15 Cuisine Restaurants in Manhattan
 
-Using a barplot to indicate the **number** of top 15 restaurants in *Manhattan*.
+Using a *BARPLOT* to indicate the **number** of top 15 restaurants in *Manhattan*.
 
 ```{r}
 rest_inspec %>% 
@@ -58,7 +70,7 @@ rest_inspec %>%
 
 ### Distribution of Scores in Different Boroughs
 
-Using a boxplot to indicate the **score** distribution in all restaurants in different *boroughs*.
+Using a *BOXPLOT* to indicate the **score** distribution in all restaurants in different *boroughs*.
 
 ```{r}
 rest_inspec %>% 
