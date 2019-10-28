@@ -9,6 +9,8 @@ output:
 ```{r setup, include=FALSE}
 library(flexdashboard)
 library(tidyverse)
+library(patchwork)
+library(ggridges)
 library(viridis)
 library(p8105.datasets)
 
@@ -20,7 +22,7 @@ data("rest_inspec")
 ```
 
 
-Column {data-width=500}
+Column {data-width=550}
 -----------------------------------------------------------------------
 
 ###  Grade Date
@@ -32,18 +34,21 @@ rest_inspec %>%
   select(grade_date) %>% 
   separate(grade_date, into = c("year", "month", "day"), sep = "-") %>%
   mutate(month = month.name[as.numeric(month)]) %>% 
+  drop_na() %>% 
+  arrange(year, month) %>% 
   group_by(year, month) %>% 
   summarize(number = n()) %>% 
   plot_ly(x = ~month, y = ~number, type = "scatter",
           mode = "lines", color = ~year) %>% 
   layout(
-    title = "Grade Date",
-    xaxis = list(title = "Date"),
-    yaxis = list(title = "Number of Restaurants")
+    title = "Number of Restaurants Graded",
+    xaxis = list(title = "Month"),
+    yaxis = list(title = "Number of Restaurants"),
+    margin = list(b = 150)
   )
 ```
 
-Column {data-width=500}
+Column {data-width=450}
 -----------------------------------------------------------------------
 
 ### Numbers of Top 15 Cuisine Restaurants in Manhattan
@@ -64,7 +69,8 @@ rest_inspec %>%
   layout(
     title = "Numbers of Top 15 Cuisine Restaurants in Manhattan",
     xaxis = list(title = "Cuisine Description"),
-    yaxis = list(title = "Number")
+    yaxis = list(title = "Number"),
+    margin = list(b = 170)
   )
 ```
 
@@ -82,7 +88,8 @@ rest_inspec %>%
   layout(
     title = "Distribution of Scores in Different Boro",
     xaxis = list(title = "Borough"),
-    yaxis = list(title = "Score")
+    yaxis = list(title = "Score"),
+    margin = list(b = 150)
   )
 ```
 
